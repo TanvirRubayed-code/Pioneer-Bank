@@ -32,3 +32,23 @@ function spanTextCorrection(id, depositAmmount){
     document.getElementById(id).innerText = totalAmmount ;
 
 }
+
+//        withdraw funtion 
+
+document.getElementById('withdraw-btn').addEventListener('click', function(){
+    const withdrawAmmount = parseFloat(document.getElementById('withdraw').value);
+
+    spanTextCorrection('withdraw-balance', withdrawAmmount);
+    spanTextForWithdraw('current-balance', withdrawAmmount);
+
+    document.getElementById('withdraw').value = '';
+})
+
+function spanTextForWithdraw(id, withdrawAmmount) {
+    const totolBalance = document.getElementById(id).innerText;
+
+    let remainningBalance = totolBalance - withdrawAmmount;
+
+    document.getElementById(id).innerText = remainningBalance ;
+
+}
